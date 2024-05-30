@@ -1,8 +1,12 @@
-body{
+header h1 {
+    font-family: "Century Gothic"; /* Added semicolon */
+    color: rgb(227, 240, 246); 
+}
+
+body {
     background-color: cornflowerblue;
     border: 6px solid white; 
     margin: 0; 
-    padding: 2.5;
+    padding: 2.5px; /* Added 'px' for padding */
     line-height: 1.6;
-    
 }
