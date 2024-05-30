@@ -1,4 +1,6 @@
-header h1 {
+header h1,
+main article h2,
+main article p {
     font-family: "Century Gothic"; /* Added semicolon */
     color: rgb(227, 240, 246); 
 }
