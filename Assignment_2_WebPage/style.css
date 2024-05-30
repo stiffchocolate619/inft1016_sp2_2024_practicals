@@ -1,3 +1,8 @@
 body{
     background-color: cornflowerblue;
+    border: 6px solid white; 
+    margin: 0; 
+    padding: 2.5;
+    line-height: 1.6;
+    
 }
