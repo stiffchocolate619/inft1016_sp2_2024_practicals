@@ -1,14 +1,24 @@
-header h1,
-main article h2,
-main article p {
-    font-family: "Century Gothic"; /* Added semicolon */
-    color: rgb(227, 240, 246); 
+html {
+    border: 10px solid white; 
+    margin: 5;
+    padding: 8;
+    min-height: 100%; 
+    box-sizing: border-box;
 }
 
 body {
+    font-family: "Century Gothic";
+    color: rgb(227, 240, 246);
     background-color: cornflowerblue;
-    border: 6px solid white; 
-    margin: 0; 
-    padding: 2.5px; /* Added 'px' for padding */
+    margin: 0;
+    padding: 10px; 
     line-height: 1.6;
+    min-height: 100%; 
+}
+
+header h1,
+main article h2,
+main article p {
+    font-family: "Century Gothic";
+    color: rgb(227, 240, 246); 
 }
