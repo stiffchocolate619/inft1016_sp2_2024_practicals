@@ -9,7 +9,7 @@ html {
 body {
     font-family: "Century Gothic";
     color: rgb(227, 240, 246);
-    background-color: cornflowerblue;
+    background: linear-gradient(to right, cornflowerblue, rgb(58, 132, 250)); /* Gradient background */
     margin: 0;
     padding: 10px; 
     line-height: 1.6;

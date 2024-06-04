@@ -5,19 +5,18 @@
     <title>My First Year Experience at UniSA</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Added CSS for the white border around the page */
         html {
-            border: 1px solid white;
+            border: 3px solid white;
             padding: 10px;
         }
     </style>
     <script>
         function updateGreeting(event) {
-            event.preventDefault(); // Prevent form submission
-            const userName = document.querySelector('input[name="user_name"]').value; // Gets the username from input
+            event.preventDefault(); 
+            const userName = document.querySelector('input[name="user_name"]').value; 
             if (userName) {
-                const greetingMessage = `Hello, ${userName}`; // Creates hello user message
-                document.getElementById('greeting').innerText = greetingMessage; // Displays message under button
+                const greetingMessage = `Hello, ${userName}`; 
+                document.getElementById('greeting').innerText = greetingMessage;
             }
         }
     </script>
@@ -40,13 +39,13 @@
         </li>
     </ul>
     <div class="search-box">
-        <form onsubmit="updateGreeting(event)"> <!-- Call updateGreeting function when form is submitted -->
+        <form onsubmit="updateGreeting(event)">
             <input type="text" name="user_name" placeholder="Enter your name!">
             <button type="submit">Apply!</button>
             <div id="greeting"></div>
         </form>
     </div>
-    <!-- Current date and time box -->
+
     <div id="current-date-time"></div>
 </nav>
 <main>
@@ -55,10 +54,23 @@
         <p>.In my first semester, I've been introduced to the foundational elements of Software Engineering. This includes learning Python programming, where I've grasped the basics of coding and how to create simple programs. I've also explored network fundamentals, which has given me an understanding of how data moves across networks and the basics of network security. Additionally, studying Information Technology Fundamentals has broadened my knowledge of computer hardware, software, and information systems. These courses have provided me with a strong starting point, and I'm excited to continue building on this knowledge in the future.</p>
     </article>
 
-    <div id="image-section">
-        <img id="displayed-image" src="https://media.wired.com/photos/65989cb9c256c0f1447f298c/master/pass/WW2024_1423783201_SECURITY_Scott-Shapiro.jpg" alt="Default Image" width="400">
-        <button onclick="showImage('https://ceric.ca/wp-content/uploads/2022/05/future-work-black-community.jpg')">Software Engineering</button>
+    <div id="webpage-images">
+        <img id="images-shown" src="https://www.unisa.edu.au/siteassets/visit/whyalla_teaser-mobile-eye.jpg" alt="Face-Image" width="350">
     </div>
+    
+    <button onclick="showImage('https://www.unisa.edu.au/siteassets/visit/whyalla_teaser-mobile-eye.jpg', 'First Image')">UniSa</button>
+    <button onclick="showImage('https://usa.bootcampcdn.com/wp-content/uploads/sites/108/2021/12/tes_gen_blog_post_071921_1233182206-1-800x412.jpg', 'Software Engineering')">Software Engineering</button>
+    <button onclick="showImage('https://academic-services.providence.edu/files/2020/06/JM4_4790-1024x683.jpg', 'Study Sessions')">Study Sessions</button>
+    
+    <script>
+        function showImage(imageSrc, altText) {
+            const imgElement = document.getElementById('images-shown');
+            imgElement.src = imageSrc;
+            imgElement.alt = altText;
+        }
+    </script>
+
+
 </main>
 </body>
 </html>
