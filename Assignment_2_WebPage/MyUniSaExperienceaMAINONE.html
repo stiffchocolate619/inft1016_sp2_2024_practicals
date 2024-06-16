@@ -6,44 +6,54 @@
     <link rel="stylesheet" href="style.css">
     <style>
         html {
-            border: 3px solid white;
-            padding: 10px;
+            border: 10px solid white; 
+            margin: 5px;
+            padding: 8px; 
+            min-height: 100%; 
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Century Gothic";
+            color: rgb(227, 240, 246);
+            background: linear-gradient(to right, cornflowerblue, rgb(58, 132, 250)); /* Gradient background */
+            margin: 0;
+            padding: 10px; 
+            line-height: 1.6;
+            min-height: 100%; 
+        }
+        header h1,
+        main article h2 {
+            font-family: "Century Gothic";
+            color: rgb(227, 240, 246); 
+            text-align: center; /* Center align headings */
         }
         body.dark-mode {
-            background-color: black;
-            color: white;
+            background: linear-gradient(to right, #000428, #004e92);
+            color: #e0e0e0;
+        }
+        body.dark-mode header,
+        body.dark-mode nav ul li a,
+        body.dark-mode #current-date-time {
+            color: #e0e0e0;
+        }
+        body.dark-mode nav ul li a:hover,
+        body.dark-mode button:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
     </style>
     <script>
-        function updateGreeting(event) {
-            event.preventDefault(); 
-            const userName = document.querySelector('input[name="user_name"]').value; 
-            if (userName) {
-                const greetingMessage = `Hello, ${userName}`; 
-                document.getElementById('greeting').innerText = greetingMessage;
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                document.body.classList.add(storedTheme);
             }
-        }
+        });
 
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
+            const theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            localStorage.setItem('theme', theme);
         }
-
-        function showImage(imageSrc, altText) {
-            const imgElement = document.getElementById('images-shown');
-            imgElement.src = imageSrc;
-            imgElement.alt = altText;
-        }
-
-        function updateDateTime() {
-            const now = new Date();
-            const formattedDateTime = now.toLocaleString();
-            document.getElementById('current-date-time').innerText = formattedDateTime;
-        }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            updateDateTime();
-            setInterval(updateDateTime, 1000);
-        });
     </script>
 </head>
 <body>
