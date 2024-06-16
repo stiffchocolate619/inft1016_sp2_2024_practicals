@@ -1,13 +1,13 @@
 html {
     border: 10px solid white; 
-    margin: 5;
-    padding: 8;
+    margin: 5px;
+    padding: 8px; 
     min-height: 100%; 
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Century Gothic";
+    font-family: "Century Gothic", sans-serif;
     color: rgb(227, 240, 246);
     background: linear-gradient(to right, cornflowerblue, rgb(58, 132, 250)); /* Gradient background */
     margin: 0;
@@ -17,8 +17,109 @@ body {
 }
 
 header h1,
-main article h2,
-main article p {
-    font-family: "Century Gothic";
+main article h2 {
+    font-family: "Century Gothic", sans-serif;
     color: rgb(227, 240, 246); 
+    text-align: center; /* Center align headings */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(227, 240, 246);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button {
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(227, 240, 246);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.search-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-box form {
+    display: inline-block;
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+}
+
+#current-date-time {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(227, 240, 246);
+}
+
+#webpage-images {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#webpage-images img {
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+body.dark-mode {
+    background: linear-gradient(to right, #000428, #004e92);
+    color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode nav ul li a,
+body.dark-mode #current-date-time {
+    color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode button:hover {
+    background: rgba(255, 255, 255, 0.4);
 }

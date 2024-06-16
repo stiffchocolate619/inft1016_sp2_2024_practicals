@@ -9,6 +9,10 @@
             border: 3px solid white;
             padding: 10px;
         }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
     </style>
     <script>
         function updateGreeting(event) {
@@ -19,12 +23,33 @@
                 document.getElementById('greeting').innerText = greetingMessage;
             }
         }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function showImage(imageSrc, altText) {
+            const imgElement = document.getElementById('images-shown');
+            imgElement.src = imageSrc;
+            imgElement.alt = altText;
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString();
+            document.getElementById('current-date-time').innerText = formattedDateTime;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
     </script>
 </head>
 <body>
 <header>
     <h1>My First Year Experience at UniSA</h1>
-    <button onclick>Toggle Theme</button>
+    <button onclick="toggleTheme()">Toggle Theme</button>
 </header>
 <nav>
     <ul>
@@ -42,35 +67,22 @@
         <form onsubmit="updateGreeting(event)">
             <input type="text" name="user_name" placeholder="Enter your name!">
             <button type="submit">Apply!</button>
-            <div id="greeting"></div>
         </form>
+        <div id="greeting"></div>
     </div>
-
     <div id="current-date-time"></div>
 </nav>
 <main>
     <article>
         <h2>Wieu's First Year Studying Software Engineering</h2>
-        <p>.In my first semester, I've been introduced to the foundational elements of Software Engineering. This includes learning Python programming, where I've grasped the basics of coding and how to create simple programs. I've also explored network fundamentals, which has given me an understanding of how data moves across networks and the basics of network security. Additionally, studying Information Technology Fundamentals has broadened my knowledge of computer hardware, software, and information systems. These courses have provided me with a strong starting point, and I'm excited to continue building on this knowledge in the future.</p>
+        <p>In my first semester, I've been introduced to the foundational elements of Software Engineering. This includes learning Python programming, where I've grasped the basics of coding and how to create simple programs. I've also explored network fundamentals, which has given me an understanding of how data moves across networks and the basics of network security. Additionally, studying Information Technology Fundamentals has broadened my knowledge of computer hardware, software, and information systems. These courses have provided me with a strong starting point, and I'm excited to continue building on this knowledge in the future.</p>
     </article>
-
     <div id="webpage-images">
         <img id="images-shown" src="https://www.unisa.edu.au/siteassets/visit/whyalla_teaser-mobile-eye.jpg" alt="Face-Image" width="350">
     </div>
-    
     <button onclick="showImage('https://www.unisa.edu.au/siteassets/visit/whyalla_teaser-mobile-eye.jpg', 'First Image')">UniSa</button>
     <button onclick="showImage('https://usa.bootcampcdn.com/wp-content/uploads/sites/108/2021/12/tes_gen_blog_post_071921_1233182206-1-800x412.jpg', 'Software Engineering')">Software Engineering</button>
     <button onclick="showImage('https://academic-services.providence.edu/files/2020/06/JM4_4790-1024x683.jpg', 'Study Sessions')">Study Sessions</button>
-    
-    <script>
-        function showImage(imageSrc, altText) {
-            const imgElement = document.getElementById('images-shown');
-            imgElement.src = imageSrc;
-            imgElement.alt = altText;
-        }
-    </script>
-
-
 </main>
 </body>
 </html>
